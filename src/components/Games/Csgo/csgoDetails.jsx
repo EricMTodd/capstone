@@ -13,6 +13,16 @@ class CsgoDetails extends Component {
                         <h4><Link to="/games/csgo/matches" >Matches</Link></h4>
                     </Col>
                 </Row>
+                <Row>
+                    <Col>
+                        <h4><Link to="/games/csgo/players" >Players</Link></h4>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                        <h4><Link to="/games/csgo/teams" >Teams</Link></h4>
+                    </Col>
+                </Row>
             </Container>
         )
     }

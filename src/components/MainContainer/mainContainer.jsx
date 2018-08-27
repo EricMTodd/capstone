@@ -5,6 +5,8 @@ import LandingPage from '../LandingPage/landingPage.jsx';
 import Games from '../Games/games.jsx';
 import Csgo from '../Games/Csgo/csgoDetails.jsx';
 import CsgoMatches from '../Games/Csgo/CsgoMatches/csgoMatches.jsx';
+import CsgoPlayers from '../Games/Csgo/CsgoPlayers/csgoPlayers.jsx';
+import CsgoTeams from '../Games/Csgo/CsgoTeams/csgoTeams.jsx';
 
 
 class MainContainer extends Component {
@@ -17,36 +19,51 @@ class MainContainer extends Component {
         }
     }
     componentDidMount() {
-        this.getMatches().then((response) => {
+        this.getCsgoMatches().then((response) => {
             this.setState({
-                matches: response
+                csgoMatches: response
+            })
+        }).catch((err) => {
+            console.log(err);
+        });
+        this.getCsgoPlayers().then((response) => {
+            this.setState({
+                csgoPlayers: response
+            })
+        }).catch((err) => {
+            console.log(err);
+        });
+        this.getCsgoTeams().then((response) => {
+            this.setState({
+                csgoTeams: response
             })
         }).catch((err) => {
             console.log(err);
         });
     }
-    getMatches = async () => {
-        const csgoMatches = await fetch ("https://esports.glenndehaan.com/api/matches/csgo", {
+    getCsgoMatches = async () => {
+        const csgoMatches = await fetch("https://esports.glenndehaan.com/api/matches/csgo", {
             method: "GET"
         });
         const csgoMatchesJson = await csgoMatches.json();
         console.log("csgoMatchesJson:", csgoMatchesJson)
-
-        const overwatchMatches = await fetch ("https://esports.glenndehaan.com/api/matches/overwatch", {
-            method: "GET"
-        });
-        const overwatchMatchesJson = await overwatchMatches.json();
-        console.log("overwatchMatchesJson:", overwatchMatchesJson)
-
-        const dota2Matches = await fetch ("https://esports.glenndehaan.com/api/matches/dota2", {
-            method: "GET"
-        });
-        const dota2MatchesJson = await dota2Matches.json();
-        console.log("dota2MatchesJson:", dota2MatchesJson)
-
-        let allMatches = [csgoMatchesJson.matches, overwatchMatchesJson.matches, dota2MatchesJson.matches]
-        console.log("allMatches:", allMatches)
         return csgoMatchesJson
+    }
+    getCsgoPlayers = async () => {
+        const csgoPlayers = await fetch("https://esports.glenndehaan.com/api/players/csgo", {
+            method: "GET"
+        });
+        const csgoPlayersJson = await csgoPlayers.json();
+        console.log("csgoPlayersJson:", csgoPlayersJson);
+        return csgoPlayersJson
+    }
+    getCsgoTeams = async () => {
+        const csgoTeams = await fetch("https://esports.glenndehaan.com/api/teams/csgo", {
+            method: "GET"
+        });
+        const csgoTeamsJson = await csgoTeams.json();
+        console.log("csgoTeamsJson:", csgoTeamsJson);
+        return csgoTeamsJson
     }
     render() {
         return (
@@ -77,6 +94,20 @@ class MainContainer extends Component {
                     return (
                     <div>
                         <CsgoMatches matches={this.state.csgoMatches} {...props} />
+                    </div>
+                    )
+                }} />
+                <Route exact path="/games/csgo/players" render={(props) => {
+                    return (
+                    <div>
+                        <CsgoPlayers players={this.state.csgoPlayers} {...props} />
+                    </div>
+                    )
+                }} />
+                <Route exact path="/games/csgo/teams" render={(props) => {
+                    return (
+                    <div>
+                        <CsgoTeams teams={this.state.csgoTeams} {...props} />
                     </div>
                     )
                 }} />

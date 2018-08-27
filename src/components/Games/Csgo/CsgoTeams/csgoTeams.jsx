@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import { Container, Row, Col } from 'reactstrap';
 
 
-class CsgoMatches extends Component {
+class CsgoTeams extends Component {
     render() {
         return(
             <Container>
                 <Row>
                     <Col>
-                        <h1>This is the CsgoMatches</h1>
+                        <h1>This is the csgoTeams container!</h1>
                     </Col>
                 </Row>
             </Container>
@@ -17,4 +17,4 @@ class CsgoMatches extends Component {
 }
 
 
-export default CsgoMatches
+export default CsgoTeams
