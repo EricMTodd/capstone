@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import { Container, Row, Col } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
 
-class Players extends Component {
+class CsgoDetails extends Component {
     render() {
         return(
             <Container>
                 <Row>
                     <Col>
-                        <div>
-                            <h1>This is the teams container!</h1>
-                        </div>
+                        <h1>This is the CsgoDetails page!</h1>
+                        <h4><Link to="/games/csgo/matches" >Matches</Link></h4>
                     </Col>
                 </Row>
             </Container>
@@ -19,4 +19,4 @@ class Players extends Component {
 }
 
 
-export default Players;
+export default CsgoDetails;

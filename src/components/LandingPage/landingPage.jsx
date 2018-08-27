@@ -5,16 +5,6 @@ import { Link } from 'react-router-dom';
 
 
 class LandingPage extends Component {
-    constructor() {
-        super()
-        this.state = {
-            "games": [],
-            "tournaments": [],
-            "matches": [],
-            "teams": [],
-            "players": []
-        }
-    }
     render() {
         return (
             <Container>
@@ -29,7 +19,7 @@ class LandingPage extends Component {
                 <Row>
                     <Col>
                         <div>
-                            <p>This is a list of games we have live updates for. You can click on any one of them to see what tournaments are available.</p>
+                            <p>This is a list of games. You can click on any one of them to see what tournaments are available.</p>
                         </div>
                     </Col>
                 </Row>
@@ -43,56 +33,7 @@ class LandingPage extends Component {
                 <Row>
                     <Col>
                         <div>
-                            <p>This is a list of tournaments we have live updates for. You can click on any one of them to see what matches are available.</p>
-                        </div>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col>
-                        <div>
-                            <Link to="/tournaments" >TournamentsList</Link>
-                        </div>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col>
-                        <div>
-                            <p>This is a list of matches we have live updates for. You can click on any one of them to see what teams are available.</p>
-                        </div>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col>
-                        <div>
-                            <Link to="/matches" >MatchesList</Link>
-                        </div>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col>
-                        <div>
-                            <p>This is a list of teams we have live updates for. You can click on any one of them to see what players are on that team.</p>
-                        </div>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col>
-                        <div>
-                            <Link to="teams" >TeamsList</Link>
-                        </div>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col>
-                        <div>
-                            <p>This is a list of players we have live updates for. You can click on any one of them to see their specific stats.</p>
-                        </div>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col>
-                        <div>
-                            <Link to="players" >PlayersList</Link>
+                            <p>This is a list of tournaments. You can click on any one of them to see what matches are available.</p>
                         </div>
                     </Col>
                 </Row>

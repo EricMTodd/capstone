@@ -33,18 +33,6 @@ class NavBar extends Component {
                 <NavItem>
                   <NavLink to="/games" tag={RRNavLink} >Games</NavLink>
                 </NavItem>
-                <NavItem>
-                  <NavLink to="/tournaments" tag={RRNavLink} >Tournaments</NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink to="/matches" tag={RRNavLink} >Matches</NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink to="/teams" tag={RRNavLink} >Teams</NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink to="/players" tag={RRNavLink} >Players</NavLink>
-                </NavItem>
               </Nav>
             </Collapse>
           </Navbar>

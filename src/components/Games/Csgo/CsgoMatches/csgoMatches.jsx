@@ -1,16 +1,15 @@
 import React, { Component } from 'react';
 import { Container, Row, Col } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
 
-class Matches extends Component {
-    render () {
-        return (
+class CsgoMatches extends Component {
+    render() {
+        return(
             <Container>
                 <Row>
                     <Col>
-                        <div>
-                            <h1>This is the matches container!</h1>
-                        </div>
+                        <h1>This is the CsgoMatches</h1>
                     </Col>
                 </Row>
             </Container>
@@ -19,4 +18,4 @@ class Matches extends Component {
 }
 
 
-export default Matches;
+export default CsgoMatches
