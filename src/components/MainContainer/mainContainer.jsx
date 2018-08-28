@@ -16,6 +16,7 @@ class MainContainer extends Component {
             "csgoMatches": [],
             "csgoPlayers": [],
             "csgoTeams": [],
+            "csgoTournaments": {},
         }
     }
     componentDidMount() {
@@ -36,6 +37,13 @@ class MainContainer extends Component {
         this.getCsgoTeams().then((response) => {
             this.setState({
                 csgoTeams: response
+            })
+        }).catch((err) => {
+            console.log(err);
+        });
+        this.getCsgoTournaments().then((response) => {
+            this.setState({
+                csgoTournaments: response
             })
         }).catch((err) => {
             console.log(err);
@@ -64,6 +72,20 @@ class MainContainer extends Component {
         const csgoTeamsJson = await csgoTeams.json();
         console.log("csgoTeamsJson:", csgoTeamsJson);
         return csgoTeamsJson
+    }
+    getCsgoTournaments = async () => {
+        const csgoTournaments = await fetch("https://esports.glenndehaan.com/api/matches/csgo", {
+            method: "GET"
+        });
+        const csgoTournamentsJson = await csgoTournaments.json();       
+        console.log("csgoTournamentsJson:", csgoTournamentsJson)
+        let tournaments = {};
+        for (let i = 0; i < csgoTournamentsJson.matches.length; i++) {
+            console.log("csgoTournamentsJson.matches[i].competition_label:", csgoTournamentsJson.matches[i].competition_label);
+            tournaments[csgoTournamentsJson.matches[i].competition_label] = [];
+            console.log("tournaments:", tournaments)
+        }
+        return tournaments;
     }
     render() {
         return (
@@ -108,6 +130,13 @@ class MainContainer extends Component {
                     return (
                     <div>
                         <CsgoTeams teams={this.state.csgoTeams} {...props} />
+                    </div>
+                    )
+                }} />
+                <Route exact path="/games/csgo/tournaments" render={(props) => {
+                    return (
+                    <div>
+                        <CsgoTeams tournaments={this.state.csgoTournaments} {...props} />
                     </div>
                     )
                 }} />
