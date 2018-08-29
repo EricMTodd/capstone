@@ -6,25 +6,35 @@ class CsgoTournamentsDetails extends Component {
     render() {
         const tournamentName = this.props.location.state.tournamentName.key;
         const matches = this.props.matches.matches;
-        let matchDetails = {};
+        const teams = this.props.teams.teams;
         let csgoMatchesList = [];
-        if (matches === undefined) {
-            console.log("matches: undefined")
+        if (matches === undefined || teams === undefined) {
         } else {
             for (let i = 0; i < matches.length; i++) {
                 if (matches[i].competition_label === tournamentName) {
+                    let team1Url = matches[i].team1_url;
+                    let team1Id = team1Url.replace( /^\D+/g, '');
+                    let team2Url = matches[i].team2_url;
+                    let team2Id = team2Url.replace( /^\D+/g, '');
+                    let team1Name;
+                    let team2Name;
+                    for (let k = 0; k < teams.length; k++) {
+                        if (teams[k].id === parseInt(team1Id, 10)) {
+                            team1Name = teams[k].full_name;
+                        } else if (teams[k].id === parseInt(team2Id, 10)) {
+                            team2Name = teams[k].full_name;
+                        } else {
+                        }
+                    }
                     csgoMatchesList.push(
-                    <Row>
-                        <Col>
-                            <h4 className="csgoTournamentMatchesList" key={matches[i].id} >{matches[i].id}</h4>
-                            <h5>{matches[i].team1_url}</h5>
-                            <h5>{matches[i].team2_url}</h5>
-                        </Col>
-                    </Row>
-                );
+                        <Row key={matches[i].id} >
+                            <Col>
+                                <h4 className="csgoTournamentMatchesList" >{team1Name} vs. {team2Name}</h4>
+                            </Col>
+                        </Row>
+                    );
                 }
             }
-            console.log("csgoMatchesList:", csgoMatchesList);
         }       
         return(
             <Container>
