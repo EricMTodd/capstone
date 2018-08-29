@@ -5,6 +5,7 @@ import LandingPage from '../LandingPage/landingPage.jsx';
 import Games from '../Games/games.jsx';
 import Csgo from '../Games/Csgo/csgoDetails.jsx';
 import CsgoTournaments from '../Games/Csgo/CsgoTournaments/csgoTournaments.jsx';
+import CsgoTournamentsDetails from '../Games/Csgo/CsgoTournaments/csgoTournamentsDetails.jsx';
 import CsgoMatches from '../Games/Csgo/CsgoMatches/csgoMatches.jsx';
 import CsgoPlayers from '../Games/Csgo/CsgoPlayers/csgoPlayers.jsx';
 import CsgoTeams from '../Games/Csgo/CsgoTeams/csgoTeams.jsx';
@@ -111,6 +112,13 @@ class MainContainer extends Component {
                     return (
                     <div>
                         <CsgoTournaments tournaments={this.state.csgoTournaments} {...props} />
+                    </div>
+                    )
+                }} />
+                <Route exact path="/games/csgo/tournaments/details/:key" render={(props) => {
+                    return (
+                    <div>
+                        <CsgoTournamentsDetails matches={this.state.csgoMatches} {...props} />
                     </div>
                     )
                 }} />

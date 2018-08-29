@@ -31,7 +31,7 @@ class NavBar extends Component {
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
                 <NavItem>
-                  <NavLink to="/games" tag={RRNavLink} >Games</NavLink>
+                  <NavLink to="/games/csgo" tag={RRNavLink} >CS:GO Details</NavLink>
                 </NavItem>
               </Nav>
             </Collapse>
