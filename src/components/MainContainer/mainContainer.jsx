@@ -4,6 +4,7 @@ import NavBar from '../NavBar/navBar.jsx';
 import LandingPage from '../LandingPage/landingPage.jsx';
 import Games from '../Games/games.jsx';
 import Csgo from '../Games/Csgo/csgoDetails.jsx';
+import CsgoTournaments from '../Games/Csgo/CsgoTournaments/csgoTournaments.jsx';
 import CsgoMatches from '../Games/Csgo/CsgoMatches/csgoMatches.jsx';
 import CsgoPlayers from '../Games/Csgo/CsgoPlayers/csgoPlayers.jsx';
 import CsgoTeams from '../Games/Csgo/CsgoTeams/csgoTeams.jsx';
@@ -54,7 +55,6 @@ class MainContainer extends Component {
             method: "GET"
         });
         const csgoMatchesJson = await csgoMatches.json();
-        console.log("csgoMatchesJson:", csgoMatchesJson)
         return csgoMatchesJson
     }
     getCsgoPlayers = async () => {
@@ -62,7 +62,6 @@ class MainContainer extends Component {
             method: "GET"
         });
         const csgoPlayersJson = await csgoPlayers.json();
-        console.log("csgoPlayersJson:", csgoPlayersJson);
         return csgoPlayersJson
     }
     getCsgoTeams = async () => {
@@ -70,7 +69,6 @@ class MainContainer extends Component {
             method: "GET"
         });
         const csgoTeamsJson = await csgoTeams.json();
-        console.log("csgoTeamsJson:", csgoTeamsJson);
         return csgoTeamsJson
     }
     getCsgoTournaments = async () => {
@@ -78,16 +76,14 @@ class MainContainer extends Component {
             method: "GET"
         });
         const csgoTournamentsJson = await csgoTournaments.json();       
-        console.log("csgoTournamentsJson:", csgoTournamentsJson)
         let tournaments = {};
         for (let i = 0; i < csgoTournamentsJson.matches.length; i++) {
-            console.log("csgoTournamentsJson.matches[i].competition_label:", csgoTournamentsJson.matches[i].competition_label);
             tournaments[csgoTournamentsJson.matches[i].competition_label] = [];
-            console.log("tournaments:", tournaments)
         }
         return tournaments;
     }
     render() {
+        console.log("this.state:", this.state)
         return (
             <div className="mainContainer" >
                 <NavBar  />
@@ -112,17 +108,17 @@ class MainContainer extends Component {
                     </div>
                     )
                 }} />
+                <Route exact path="/games/csgo/tournaments" render={(props) => {
+                    return (
+                    <div>
+                        <CsgoTournaments tournaments={this.state.csgoTournaments} {...props} />
+                    </div>
+                    )
+                }} />
                 <Route exact path="/games/csgo/matches" render={(props) => {
                     return (
                     <div>
                         <CsgoMatches matches={this.state.csgoMatches} {...props} />
-                    </div>
-                    )
-                }} />
-                <Route exact path="/games/csgo/players" render={(props) => {
-                    return (
-                    <div>
-                        <CsgoPlayers players={this.state.csgoPlayers} {...props} />
                     </div>
                     )
                 }} />
@@ -133,10 +129,10 @@ class MainContainer extends Component {
                     </div>
                     )
                 }} />
-                <Route exact path="/games/csgo/tournaments" render={(props) => {
+                <Route exact path="/games/csgo/players" render={(props) => {
                     return (
                     <div>
-                        <CsgoTeams tournaments={this.state.csgoTournaments} {...props} />
+                        <CsgoPlayers players={this.state.csgoPlayers} {...props} />
                     </div>
                     )
                 }} />

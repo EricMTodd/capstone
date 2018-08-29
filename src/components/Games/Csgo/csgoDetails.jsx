@@ -10,6 +10,15 @@ class CsgoDetails extends Component {
                 <Row>
                     <Col>
                         <h1>This is the CsgoDetails page!</h1>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                        <h4><Link to="/games/csgo/tournaments" >Tournaments</Link></h4>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
                         <h4><Link to="/games/csgo/matches" >Matches</Link></h4>
                     </Col>
                 </Row>
