@@ -83,7 +83,6 @@ class MainContainer extends Component {
         return tournaments;
     }
     render() {
-        console.log("this.state:", this.state)
         return (
             <div className="mainContainer" >
                 <NavBar  />

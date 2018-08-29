@@ -4,19 +4,20 @@ import { Container, Row, Col } from 'reactstrap';
 
 class CsgoTeams extends Component {
     render() {
-        const teams = this.props.teams.teams        
+        let teams = this.props.teams.teams
+        let csgoTeamsList = []    
         if (teams === undefined) {
             console.log("teams: undefined")
         } else {
             for (let i = 0; i < teams.length; i++) {
-                console.log("successfully grabbed teams.")
+                csgoTeamsList.push(<Row><Col><h4 className="csgoTeamsList" key={teams[i].full_name} >{teams[i].full_name}</h4></Col></Row>);
             }
         }
         return(
             <Container>
                 <Row>
                     <Col>
-                        <h1>This is the csgoTeams container!</h1>
+                        {csgoTeamsList}
                     </Col>
                 </Row>
             </Container>
