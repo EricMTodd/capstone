@@ -10,20 +10,13 @@ class CsgoPlayers extends Component {
         if (players === undefined || teams === undefined) {
             console.log("Loading data...");
         } else {
-            console.log("players:", players);
-            console.log("teams:", teams);
             for (let i = 0; i < players.length; i++) {
-                console.log("players[i]:", players[i]);
                 let teamUrl = players[i].team_url;
-                console.log("teamUrl:", teamUrl);
                 let teamId = teamUrl.replace( /^\D+/g, '');
-                console.log("teamId:", teamId);
                 let teamName;
                 for (let k = 0; k < teams.length; k++) {
-                    if (teams[k].id === parseInt(teamId)) {
-                        console.log("teams[k].id:", teams[k].id);
+                    if (teams[k].id === parseInt(teamId, 10)) {
                         teamName = teams[k].full_name;
-                        console.log("teamName:", teamName);
                     } else {
                     }
                 }
