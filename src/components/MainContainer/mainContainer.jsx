@@ -19,6 +19,14 @@ import OverwatchMatches from '../Games/Overwatch/OverwatchMatches/overwatchMatch
 import OverwatchPlayers from '../Games/Overwatch/OverwatchPlayers/overwatchPlayers.jsx';
 import OverwatchTeams from '../Games/Overwatch/OverwatchTeams/overwatchTeams.jsx';
 import OverwatchTeamsDetails from '../Games/Overwatch/OverwatchTeams/OverwatchTeamsDetails/overwatchTeamsDetails.jsx';
+// Dota 2
+import Dota2 from '../Games/Dota2/dota2Details.jsx';
+import Dota2Tournaments from '../Games/Dota2/Dota2Tournaments/dota2Tournaments.jsx';
+import Dota2TournamentsDetails from '../Games/Dota2/Dota2Tournaments/Dota2TournamentsDetails/dota2TournamentsDetails.jsx';
+import Dota2Matches from '../Games/Dota2/Dota2Matches/dota2Matches.jsx';
+import Dota2Players from '../Games/Dota2/Dota2Players/dota2Players.jsx';
+import Dota2Teams from '../Games/Dota2/Dota2Teams/dota2Teams.jsx';
+import Dota2TeamsDetails from '../Games/Dota2/Dota2Teams/Dota2TeamsDetails/dota2TeamsDetails.jsx';
 
 
 
@@ -37,6 +45,10 @@ class MainContainer extends Component {
             "overwatchTeams": [],
             "overwatchTournaments": {},
             // Dota 2
+            "dota2Matches": [],
+            "dota2Players": [],
+            "dota2Teams": [],
+            "dota2Tournaments": {},
         }
     }
     componentDidMount() {
@@ -99,8 +111,39 @@ class MainContainer extends Component {
             })
         }).catch((err) => {
             console.log(err);
-        })
+        });
+
+        // Dota 2
+        this.getDota2Matches().then((response) => {
+            this.setState({
+                dota2Matches: response
+            })
+        }).catch((err) => {
+            console.log(err);
+        });
+        this.getDota2Players().then((response) => {
+            this.setState({
+                dota2Players: response
+            })
+        }).catch((err) => {
+            console.log(err);
+        });
+        this.getDota2Teams().then((response) => {
+            this.setState({
+                dota2Teams: response
+            })
+        }).catch((err) => {
+            console.log(err);
+        });
+        this.getDota2Tournaments().then((response) => {
+            this.setState({
+                dota2Tournaments: response
+            })
+        }).catch((err) => {
+            console.log(err);
+        });
     }
+
     // CS:GO
     getCsgoMatches = async () => {
         const csgoMatches = await fetch("https://esports.glenndehaan.com/api/matches/csgo", {
@@ -168,6 +211,41 @@ class MainContainer extends Component {
         }
         return tournaments;
     }
+
+    // Dota 2
+    getDota2Matches = async () => {
+        const dota2Matches = await fetch("https://esports.glenndehaan.com/api/matches/dota2", {
+            method: "GET"
+        });
+        const dota2MatchesJson = await dota2Matches.json();
+        return dota2MatchesJson
+    }
+    getDota2Players = async () => {
+        const dota2Players = await fetch("https://esports.glenndehaan.com/api/players/dota2", {
+            method: "GET"
+        });
+        const dota2PlayersJson = await dota2Players.json();
+        return dota2PlayersJson
+    }
+    getDota2Teams = async () => {
+        const dota2Teams = await fetch("https://esports.glenndehaan.com/api/teams/dota2", {
+            method: "GET"
+        });
+        const dota2TeamsJson = await dota2Teams.json();
+        return dota2TeamsJson
+    }
+    getDota2Tournaments = async () => {
+        const dota2Tournaments = await fetch("https://esports.glenndehaan.com/api/matches/dota2", {
+            method: "GET"
+        });
+        const dota2TournamentsJson = await dota2Tournaments.json();       
+        let tournaments = {};
+        for (let i = 0; i < dota2TournamentsJson.matches.length; i++) {
+            tournaments[dota2TournamentsJson.matches[i].competition_label] = [];
+        }
+        return tournaments;
+    }
+
     render() {
         return (
             <div className="mainContainer" >
@@ -293,6 +371,55 @@ class MainContainer extends Component {
 
 
                 {/* Dota 2 Routes */}
+                <Route exact path="/games/dota2" render={(props) => {
+                    return (
+                    <div>
+                        <Dota2 {...props} />
+                    </div>
+                    )
+                }} />
+                <Route exact path="/games/dota2/tournaments" render={(props) => {
+                    return (
+                    <div>
+                        <Dota2Tournaments tournaments={this.state.dota2Tournaments} {...props} />
+                    </div>
+                    )
+                }} />
+                <Route exact path="/games/dota2/tournaments/details/:key" render={(props) => {
+                    return (
+                    <div>
+                        <Dota2TournamentsDetails teams={this.state.dota2Teams} matches={this.state.dota2Matches} {...props} />
+                    </div>
+                    )
+                }} />
+                <Route exact path="/games/dota2/matches" render={(props) => {
+                    return (
+                    <div>
+                        <Dota2Matches matches={this.state.dota2Matches} {...props} />
+                    </div>
+                    )
+                }} />
+                <Route exact path="/games/dota2/teams" render={(props) => {
+                    return (
+                    <div>
+                        <Dota2Teams teams={this.state.dota2Teams} {...props} />
+                    </div>
+                    )
+                }} />
+                <Route exact path="/games/dota2/teams/details/:key" render={(props) => {
+                    return (
+                    <div>
+                        <Dota2TeamsDetails players={this.state.dota2Players} teams={this.state.dota2Teams} {...props} />
+                    </div>
+                    )
+                }} />
+                <Route exact path="/games/dota2/players" render={(props) => {
+                    return (
+                    <div>
+                        <Dota2Players players={this.state.dota2Players} teams={this.state.dota2Teams} {...props} />
+                    </div>
+                    )
+                }} />
             </div>
         );
     };
