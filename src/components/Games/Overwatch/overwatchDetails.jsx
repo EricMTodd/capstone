@@ -3,29 +3,29 @@ import { Container, Row, Col } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
 
-class CsgoDetails extends Component {
+class OverwatchDetails extends Component {
     render() {
         return(
             <Container>
                 <Row>
                     <Col>
-                        <h1>Counter-Strike: Global Offensive</h1>
+                        <h1>Overwatch</h1>
                         <br/>
                     </Col>
                 </Row>
                 <Row>
                     <Col>
-                        <h4><Link to="/games/csgo/tournaments" >Tournaments</Link></h4>
+                        <h4><Link to="/games/overwatch/tournaments" >Tournaments</Link></h4>
                     </Col>
                 </Row>
                 <Row>
                     <Col>
-                        <h4><Link to="/games/csgo/teams" >Teams</Link></h4>
+                        <h4><Link to="/games/overwatch/teams" >Teams</Link></h4>
                     </Col>
                 </Row>
                 <Row>
                     <Col>
-                        <h4><Link to="/games/csgo/players" >Players</Link></h4>
+                        <h4><Link to="/games/overwatch/players" >Players</Link></h4>
                     </Col>
                 </Row>
                 
@@ -35,4 +35,4 @@ class CsgoDetails extends Component {
 }
 
 
-export default CsgoDetails;
+export default OverwatchDetails;

@@ -22,7 +22,7 @@ class Games extends Component {
                     </Row>
                     <Row>
                         <Col>
-                            <Link to="#" >
+                            <Link to="/games/overwatch" >
                                 <h4>Overwatch</h4>
                             </Link>
                         </Col>

@@ -3,6 +3,7 @@ import { Route } from 'react-router-dom';
 import NavBar from '../NavBar/navBar.jsx';
 import LandingPage from '../LandingPage/landingPage.jsx';
 import Games from '../Games/games.jsx';
+// CS:GO imports
 import Csgo from '../Games/Csgo/csgoDetails.jsx';
 import CsgoTournaments from '../Games/Csgo/CsgoTournaments/csgoTournaments.jsx';
 import CsgoTournamentsDetails from '../Games/Csgo/CsgoTournaments/CsgoTournamentsDetails/csgoTournamentsDetails.jsx';
@@ -10,19 +11,37 @@ import CsgoMatches from '../Games/Csgo/CsgoMatches/csgoMatches.jsx';
 import CsgoPlayers from '../Games/Csgo/CsgoPlayers/csgoPlayers.jsx';
 import CsgoTeams from '../Games/Csgo/CsgoTeams/csgoTeams.jsx';
 import CsgoTeamsDetails from '../Games/Csgo/CsgoTeams/CsgoTeamsDetails/csgoTeamsDetails.jsx';
+// Overwatch Imports
+import Overwatch from '../Games/Overwatch/overwatchDetails.jsx';
+import OverwatchTournaments from '../Games/Overwatch/OverwatchTournaments/overwatchTournaments.jsx';
+import OverwatchTournamentsDetails from '../Games/Overwatch/OverwatchTournaments/OverwatchTournamentsDetails/overwatchTournamentsDetails.jsx';
+import OverwatchMatches from '../Games/Overwatch/OverwatchMatches/overwatchMatches.jsx';
+import OverwatchPlayers from '../Games/Overwatch/OverwatchPlayers/overwatchPlayers.jsx';
+import OverwatchTeams from '../Games/Overwatch/OverwatchTeams/overwatchTeams.jsx';
+import OverwatchTeamsDetails from '../Games/Overwatch/OverwatchTeams/OverwatchTeamsDetails/overwatchTeamsDetails.jsx';
+
 
 
 class MainContainer extends Component {
     constructor() {
         super()
         this.state = {
+            // CS:GO
             "csgoMatches": [],
             "csgoPlayers": [],
             "csgoTeams": [],
             "csgoTournaments": {},
+            // Overwatch
+            "overwatchMatches": [],
+            "overwatchPlayers": [],
+            "overwatchTeams": [],
+            "overwatchTournaments": {},
+            // Dota 2
         }
     }
     componentDidMount() {
+
+        // CS:GO
         this.getCsgoMatches().then((response) => {
             this.setState({
                 csgoMatches: response
@@ -51,7 +70,38 @@ class MainContainer extends Component {
         }).catch((err) => {
             console.log(err);
         });
+
+        // Overwatch
+        this.getOverwatchMatches().then((response) => {
+            this.setState({
+                overwatchMatches: response
+            })
+        }).catch((err) => {
+            console.log(err);
+        });
+        this.getOverwatchPlayers().then((response) => {
+            this.setState({
+                overwatchPlayers: response
+            })
+        }).catch((err) => {
+            console.log(err);
+        });
+        this.getOverwatchTeams().then((response) => {
+            this.setState({
+                overwatchTeams: response
+            })
+        }).catch((err) => {
+            console.log(err);
+        });
+        this.getOverwatchTournaments().then((response) => {
+            this.setState({
+                overwatchTournaments: response
+            })
+        }).catch((err) => {
+            console.log(err);
+        })
     }
+    // CS:GO
     getCsgoMatches = async () => {
         const csgoMatches = await fetch("https://esports.glenndehaan.com/api/matches/csgo", {
             method: "GET"
@@ -84,6 +134,40 @@ class MainContainer extends Component {
         }
         return tournaments;
     }
+
+    // Overwatch
+    getOverwatchMatches = async () => {
+        const overwatchMatches = await fetch("https://esports.glenndehaan.com/api/matches/overwatch", {
+            method: "GET"
+        });
+        const overwatchMatchesJson = await overwatchMatches.json();
+        return overwatchMatchesJson
+    }
+    getOverwatchPlayers = async () => {
+        const overwatchPlayers = await fetch("https://esports.glenndehaan.com/api/players/overwatch", {
+            method: "GET"
+        });
+        const overwatchPlayersJson = await overwatchPlayers.json();
+        return overwatchPlayersJson
+    }
+    getOverwatchTeams = async () => {
+        const overwatchTeams = await fetch("https://esports.glenndehaan.com/api/teams/overwatch", {
+            method: "GET"
+        });
+        const overwatchTeamsJson = await overwatchTeams.json();
+        return overwatchTeamsJson
+    }
+    getOverwatchTournaments = async () => {
+        const overwatchTournaments = await fetch("https://esports.glenndehaan.com/api/matches/overwatch", {
+            method: "GET"
+        });
+        const overwatchTournamentsJson = await overwatchTournaments.json();       
+        let tournaments = {};
+        for (let i = 0; i < overwatchTournamentsJson.matches.length; i++) {
+            tournaments[overwatchTournamentsJson.matches[i].competition_label] = [];
+        }
+        return tournaments;
+    }
     render() {
         return (
             <div className="mainContainer" >
@@ -102,6 +186,9 @@ class MainContainer extends Component {
                     </div>
                     )
                 }} />
+
+
+                {/* CS:GO Routes */}
                 <Route exact path="/games/csgo" render={(props) => {
                     return (
                     <div>
@@ -151,6 +238,61 @@ class MainContainer extends Component {
                     </div>
                     )
                 }} />
+
+
+                {/* Overwatch Routes */}
+                <Route exact path="/games/overwatch" render={(props) => {
+                    return (
+                    <div>
+                        <Overwatch {...props} />
+                    </div>
+                    )
+                }} />
+                <Route exact path="/games/overwatch/tournaments" render={(props) => {
+                    return (
+                    <div>
+                        <OverwatchTournaments tournaments={this.state.overwatchTournaments} {...props} />
+                    </div>
+                    )
+                }} />
+                <Route exact path="/games/overwatch/tournaments/details/:key" render={(props) => {
+                    return (
+                    <div>
+                        <OverwatchTournamentsDetails teams={this.state.overwatchTeams} matches={this.state.overwatchMatches} {...props} />
+                    </div>
+                    )
+                }} />
+                <Route exact path="/games/overwatch/matches" render={(props) => {
+                    return (
+                    <div>
+                        <OverwatchMatches matches={this.state.overwatchMatches} {...props} />
+                    </div>
+                    )
+                }} />
+                <Route exact path="/games/overwatch/teams" render={(props) => {
+                    return (
+                    <div>
+                        <OverwatchTeams teams={this.state.overwatchTeams} {...props} />
+                    </div>
+                    )
+                }} />
+                <Route exact path="/games/overwatch/teams/details/:key" render={(props) => {
+                    return (
+                    <div>
+                        <OverwatchTeamsDetails players={this.state.overwatchPlayers} teams={this.state.overwatchTeams} {...props} />
+                    </div>
+                    )
+                }} />
+                <Route exact path="/games/overwatch/players" render={(props) => {
+                    return (
+                    <div>
+                        <OverwatchPlayers players={this.state.overwatchPlayers} teams={this.state.overwatchTeams} {...props} />
+                    </div>
+                    )
+                }} />
+
+
+                {/* Dota 2 Routes */}
             </div>
         );
     };
