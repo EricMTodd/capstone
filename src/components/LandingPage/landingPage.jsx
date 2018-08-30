@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Container, Row, Col } from 'reactstrap';
-import { Link } from 'react-router-dom';
+import Games from '../Games/games.jsx';
 
 
 
@@ -12,7 +12,7 @@ class LandingPage extends Component {
                     <Col>
                         <div>
                             <h1>Welcome to fragtrak</h1>
-                            <p>fragtrak tracks all the details of your favorite esports in real time, so you're never out of the loop.</p>
+                            <p>fragtrak houses details of your favorite esports so you're never out of the loop.</p>
                         </div>
                     </Col>
                 </Row>
@@ -26,14 +26,7 @@ class LandingPage extends Component {
                 <Row>
                     <Col>
                         <div>
-                            <Link to="/games" >GamesList</Link>
-                        </div>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col>
-                        <div>
-                            <p>This is a list of tournaments. You can click on any one of them to see what matches are available.</p>
+                            <Games />
                         </div>
                     </Col>
                 </Row>
