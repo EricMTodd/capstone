@@ -33,6 +33,8 @@ class OverwatchTeams extends Component {
                 <Row>
                     <Col>
                         <h1 className="primaryText" >Active Overwatch Teams</h1>
+                        <img className="logo" src="https://i.imgur.com/iAbXNxw.png" alt="overwatch"/>
+                        <br/>
                         <br/>
                     </Col>
                 </Row>

@@ -30,6 +30,8 @@ class OverwatchTeamsDetials extends Component {
                 <Row>
                     <Col>
                         <h1>{teamName}</h1>
+                        <img className="logo" src="https://i.imgur.com/iAbXNxw.png" alt="overwatch"/>
+                        <br/>
                         <br/>
                     </Col>
                 </Row>

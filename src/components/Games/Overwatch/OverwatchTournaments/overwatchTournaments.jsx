@@ -27,6 +27,8 @@ class OverwatchTournaments extends Component {
                 <Row>
                     <Col>
                         <h1 className="primaryText" >Overwatch Tournaments List</h1>
+                        <img className="logo" src="https://i.imgur.com/iAbXNxw.png" alt="overwatch"/>
+                        <br/>
                         <br/>
                     </Col>
                 </Row>

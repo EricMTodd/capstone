@@ -1,3 +1,14 @@
-a.primaryText:link, a.primaryText:hover, a.primaryText:visited, a.primaryText:active, .primaryText {
+a.primaryText:link, a.primaryText:visited, .primaryText {
     color: #363636;
+}
+a.primaryText:hover {
+    text-decoration: none;
+    color: #cca436;
+}
+a.primaryText:active {
+    color: #363636;
+}
+.logo {
+    max-width: 72px;
+    max-height: 72px;
 }

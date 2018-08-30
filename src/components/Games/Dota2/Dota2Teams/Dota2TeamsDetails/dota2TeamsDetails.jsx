@@ -30,6 +30,8 @@ class Dota2TeamsDetials extends Component {
                 <Row>
                     <Col>
                         <h1 className="primaryText" >{teamName}</h1>
+                        <img className="logo" src="https://i.imgur.com/r5R2OeB.png" alt="dota2"/>
+                        <br/>
                         <br/>
                     </Col>
                 </Row>

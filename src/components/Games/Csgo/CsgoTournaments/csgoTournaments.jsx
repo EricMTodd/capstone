@@ -27,6 +27,8 @@ class CsgoTournaments extends Component {
                 <Row>
                     <Col>
                         <h1 className="primaryText" >CS:GO Tournaments List</h1>
+                        <img className="logo" src="https://i.imgur.com/ccC6yPx.png" alt="cs:go"/>
+                        <br/>
                         <br/>
                     </Col>
                 </Row>

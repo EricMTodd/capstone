@@ -38,6 +38,8 @@ class Dota2Teams extends Component {
                 <Row>
                     <Col>
                         <h1 className="primaryText" >Active Dota 2 Teams</h1>
+                        <img className="logo" src="https://i.imgur.com/r5R2OeB.png" alt="dota2"/>
+                        <br/>
                         <br/>
                     </Col>
                 </Row>
