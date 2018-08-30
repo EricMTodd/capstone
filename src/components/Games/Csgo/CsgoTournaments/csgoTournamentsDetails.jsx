@@ -14,11 +14,11 @@ class CsgoTournamentsDetails extends Component {
                 if (matches[i].competition_label === tournamentName) {
                     let team1Url = matches[i].team1_url;
                     let team1Id = team1Url.replace( /^\D+/g, '');
+                    let team1Name;
                     let team2Url = matches[i].team2_url;
                     let team2Id = team2Url.replace( /^\D+/g, '');
-                    let victorUrl = matches[i].winning_team_url;
-                    let team1Name;
                     let team2Name;
+                    let victorUrl = matches[i].winning_team_url;
                     let victorName;
                     for (let k = 0; k < teams.length; k++) {
                         if (teams[k].id === parseInt(team1Id, 10)) {
@@ -54,7 +54,7 @@ class CsgoTournamentsDetails extends Component {
                     </Col>
                 </Row>
                 <Row>
-                        {csgoMatchesList}
+                    {csgoMatchesList}
                 </Row>
             </Container>
         )

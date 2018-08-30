@@ -139,7 +139,7 @@ class MainContainer extends Component {
                 <Route exact path="/games/csgo/players" render={(props) => {
                     return (
                     <div>
-                        <CsgoPlayers players={this.state.csgoPlayers} {...props} />
+                        <CsgoPlayers players={this.state.csgoPlayers} teams={this.state.csgoTeams} {...props} />
                     </div>
                     )
                 }} />
