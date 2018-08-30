@@ -5,10 +5,11 @@ import LandingPage from '../LandingPage/landingPage.jsx';
 import Games from '../Games/games.jsx';
 import Csgo from '../Games/Csgo/csgoDetails.jsx';
 import CsgoTournaments from '../Games/Csgo/CsgoTournaments/csgoTournaments.jsx';
-import CsgoTournamentsDetails from '../Games/Csgo/CsgoTournaments/csgoTournamentsDetails.jsx';
+import CsgoTournamentsDetails from '../Games/Csgo/CsgoTournaments/CsgoTournamentsDetails/csgoTournamentsDetails.jsx';
 import CsgoMatches from '../Games/Csgo/CsgoMatches/csgoMatches.jsx';
 import CsgoPlayers from '../Games/Csgo/CsgoPlayers/csgoPlayers.jsx';
 import CsgoTeams from '../Games/Csgo/CsgoTeams/csgoTeams.jsx';
+import CsgoTeamsDetails from '../Games/Csgo/CsgoTeams/CsgoTeamsDetails/csgoTeamsDetails.jsx';
 
 
 class MainContainer extends Component {
@@ -133,6 +134,13 @@ class MainContainer extends Component {
                     return (
                     <div>
                         <CsgoTeams teams={this.state.csgoTeams} {...props} />
+                    </div>
+                    )
+                }} />
+                <Route exact path="/games/csgo/teams/details/:key" render={(props) => {
+                    return (
+                    <div>
+                        <CsgoTeamsDetails players={this.state.csgoPlayers} teams={this.state.csgoTeams} {...props} />
                     </div>
                     )
                 }} />

@@ -24,7 +24,7 @@ class CsgoPlayers extends Component {
                     <Col key={players[i].id} >
                         <h2>"{players[i].in_game_name}"</h2>
                         <h4>{players[i].real_life_name}</h4>
-                        <h6>Representing: {teamName}</h6>
+                        <h6>Team: {teamName}</h6>
                         <br/>
                     </Col>
                 )

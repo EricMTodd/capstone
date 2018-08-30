@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { Container, Row, Col } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
 
 class CsgoTeams extends Component {
     render() {
         let teams = this.props.teams.teams
-        let csgoTeamsList = [];    
+        let csgoTeamsList = [];
         if (teams === undefined) {
             console.log("Loading data...")
         } else {
@@ -13,7 +14,9 @@ class CsgoTeams extends Component {
                 if (teams[i].country === null) {
                     csgoTeamsList.push(
                             <Col key={teams[i].id} >
-                                <h3>{teams[i].full_name}</h3>
+                                <Link to={{ pathname: '/games/csgo/teams/details/' + teams[i].id, state: { teamName: teams[i].full_name, teamId: teams[i].id } }} >
+                                    <h3>{teams[i].full_name}</h3>
+                                </Link>
                                 <h6>Independent</h6>
                                 <br/>
                             </Col>
@@ -21,7 +24,9 @@ class CsgoTeams extends Component {
                 } else {
                     csgoTeamsList.push(
                             <Col key={teams[i].id} >
-                                <h3>{teams[i].full_name}</h3>
+                                <Link to={{ pathname: '/games/csgo/teams/details/' + teams[i].id, state: { teamName: teams[i].full_name, teamId: teams[i].id } }} >
+                                    <h3>{teams[i].full_name}</h3>
+                                </Link>
                                 <h6>Representing: {teams[i].country}</h6>
                                 <br/>
                             </Col>
@@ -38,8 +43,8 @@ class CsgoTeams extends Component {
                     </Col>
                 </Row>
                 <Row>
-                        {csgoTeamsList}
-                        <br/>
+                    {csgoTeamsList}
+                    <br/>
                 </Row>
             </Container>
         )

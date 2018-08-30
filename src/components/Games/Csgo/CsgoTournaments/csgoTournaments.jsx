@@ -9,7 +9,17 @@ class CsgoTournaments extends Component {
         let csgoTournamentsList = []
         for (let key in tournaments) {
             if (tournaments.hasOwnProperty(key)) {
-                csgoTournamentsList.push(<Row key={key} ><Col><h4><Link to={{ pathname: '/games/csgo/tournaments/details/' + JSON.stringify({key}), state: { tournamentName: {key} } }} className="csgoTournamentsList" >{key}</Link></h4></Col></Row>);
+                csgoTournamentsList.push(
+                <Row key={key} >
+                    <Col>
+                        <h4>
+                            <Link to={{ pathname: '/games/csgo/tournaments/details/' + JSON.stringify({key}), state: { tournamentName: {key} } }} >
+                                {key}
+                            </Link>
+                        </h4>
+                    </Col>
+                </Row>
+            );
             }
         }
         return(
