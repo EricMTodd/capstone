@@ -38,13 +38,11 @@ class CsgoTournamentsDetails extends Component {
                         }
                     }
                     csgoMatchesList.push(
-                        <Row key={matches[i].id} >
-                            <Col>
+                            <Col key={matches[i].id} >
                                 <h4>{team1Name} vs. {team2Name}</h4>
                                 <h4>Victor: {victorName}</h4>
                                 <br/>
                             </Col>
-                        </Row>
                     );
                 }
             }
@@ -57,9 +55,7 @@ class CsgoTournamentsDetails extends Component {
                     </Col>
                 </Row>
                 <Row>
-                    <Col>
                         {csgoMatchesList}
-                    </Col>
                 </Row>
             </Container>
         )
