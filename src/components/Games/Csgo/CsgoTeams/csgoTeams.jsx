@@ -8,7 +8,6 @@ class CsgoTeams extends Component {
         let teams = this.props.teams.teams
         let csgoTeamsList = [];
         if (teams === undefined) {
-            console.log("Loading data...")
         } else {
             for (let i = 0; i < teams.length; i++) {
                 if (teams[i].country === null) {

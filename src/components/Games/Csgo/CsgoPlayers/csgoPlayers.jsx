@@ -34,7 +34,7 @@ class CsgoPlayers extends Component {
             <Container>
                 <Row>
                     <Col>
-                        <h1>Active CS:GO Teams</h1>
+                        <h1>Active CS:GO Players</h1>
                         <br/>
                     </Col>
                 </Row>

@@ -26,6 +26,12 @@ class CsgoTournaments extends Component {
             <Container>
                 <Row>
                     <Col>
+                        <h1>CS:GO Tournaments List</h1>
+                        <br/>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
                         {csgoTournamentsList}
                     </Col>
                 </Row>

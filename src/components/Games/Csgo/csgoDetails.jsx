@@ -9,7 +9,8 @@ class CsgoDetails extends Component {
             <Container>
                 <Row>
                     <Col>
-                        <h1>This is the CsgoDetails page!</h1>
+                        <h1>Counter-Strike: Global Offensive</h1>
+                        <br/>
                     </Col>
                 </Row>
                 <Row>
