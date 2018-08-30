@@ -9,23 +9,23 @@ class CsgoDetails extends Component {
             <Container>
                 <Row>
                     <Col>
-                        <h1>Counter-Strike: Global Offensive</h1>
+                        <h1 className="primaryText" >Counter-Strike: Global Offensive</h1>
                         <br/>
                     </Col>
                 </Row>
                 <Row>
                     <Col>
-                        <h4><Link to="/games/csgo/tournaments" >Tournaments</Link></h4>
+                        <h4><Link to="/games/csgo/tournaments" className="primaryText" >Tournaments</Link></h4>
                     </Col>
                 </Row>
                 <Row>
                     <Col>
-                        <h4><Link to="/games/csgo/teams" >Teams</Link></h4>
+                        <h4><Link to="/games/csgo/teams" className="primaryText" >Teams</Link></h4>
                     </Col>
                 </Row>
                 <Row>
                     <Col>
-                        <h4><Link to="/games/csgo/players" >Players</Link></h4>
+                        <h4><Link to="/games/csgo/players" className="primaryText" >Players</Link></h4>
                     </Col>
                 </Row>
                 

@@ -21,9 +21,9 @@ class OverwatchPlayers extends Component {
                 }
                 overwatchPlayersList.push(
                     <Col key={players[i].id} >
-                        <h2>"{players[i].in_game_name}"</h2>
-                        <h4>{players[i].real_life_name}</h4>
-                        <h6>Team: {teamName}</h6>
+                        <h2 className="primaryText" >"{players[i].in_game_name}"</h2>
+                        <h4 className="primaryText" >{players[i].real_life_name}</h4>
+                        <h6 className="primaryText" >Team: {teamName}</h6>
                         <br/>
                     </Col>
                 )
@@ -33,7 +33,7 @@ class OverwatchPlayers extends Component {
             <Container>
                 <Row>
                     <Col>
-                        <h1>Active Overwatch Players</h1>
+                        <h1 className="primaryText" >Active Overwatch Players</h1>
                         <br/>
                     </Col>
                 </Row>

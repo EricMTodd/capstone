@@ -7,19 +7,13 @@ import Games from '../Games/games.jsx';
 class LandingPage extends Component {
     render() {
         return (
-            <Container>
+            <Container className="landingPageContainer" >
                 <Row>
                     <Col>
                         <div>
-                            <h1>Welcome to fragtrak</h1>
-                            <p>fragtrak houses details of your favorite esports so you're never out of the loop.</p>
-                        </div>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col>
-                        <div>
-                            <p>This is a list of games. You can click on any one of them to see what tournaments are available.</p>
+                            <h1 className="primaryText" >Welcome to fragtrak</h1>
+                            <h4 className="primaryText" >fragtrak houses details of your favorite esports so you're never out of the loop.</h4>
+                            <br/>
                         </div>
                     </Col>
                 </Row>

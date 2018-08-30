@@ -12,16 +12,16 @@ class OverwatchTeams extends Component {
                 if (teams[i].country === null) {
                     overwatchTeamsList.push(
                             <Col key={teams[i].id} >
-                                    <h3>{teams[i].full_name}</h3>
-                                <h6>Independent</h6>
+                                <h3 className="primaryText" >{teams[i].full_name}</h3>
+                                <h6 className="primaryText" >Independent</h6>
                                 <br/>
                             </Col>
                     );
                 } else {
                     overwatchTeamsList.push(
                             <Col key={teams[i].id} >
-                                    <h3>{teams[i].full_name}</h3>
-                                <h6>Representing: {teams[i].country}</h6>
+                                <h3 className="primaryText" >{teams[i].full_name}</h3>
+                                <h6 className="primaryText" >Representing: {teams[i].country}</h6>
                                 <br/>
                             </Col>
                     );
@@ -32,7 +32,7 @@ class OverwatchTeams extends Component {
             <Container>
                 <Row>
                     <Col>
-                        <h1>Active Overwatch Teams</h1>
+                        <h1 className="primaryText" >Active Overwatch Teams</h1>
                         <br/>
                     </Col>
                 </Row>

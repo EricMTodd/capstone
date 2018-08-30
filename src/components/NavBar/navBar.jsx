@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './navBar.css';
 import {
     Collapse,
     Navbar,
@@ -25,19 +26,19 @@ class NavBar extends Component {
     render() {
       return (
         <div>
-          <Navbar color="light" light expand="md">
-            <NavbarBrand href="/">fragtrak</NavbarBrand>
+          <Navbar className="navBar" light expand="md">
+            <NavbarBrand href="/"><span className="navText" >fragtrak</span></NavbarBrand>
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
                 <NavItem>
-                  <NavLink to="/games/csgo" tag={RRNavLink} >CS:GO</NavLink>
+                  <NavLink to="/games/csgo" tag={RRNavLink} ><span className="navText" >CS:GO</span></NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink to="/games/overwatch" tag={RRNavLink} >Overwatch</NavLink>
+                  <NavLink to="/games/overwatch" tag={RRNavLink} ><span className="navText" >Overwatch</span></NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink to="/games/dota2" tag={RRNavLink} >Dota 2</NavLink>
+                  <NavLink to="/games/dota2" tag={RRNavLink} ><span className="navText" >Dota 2</span></NavLink>
                 </NavItem>
               </Nav>
             </Collapse>

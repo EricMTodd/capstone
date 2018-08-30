@@ -13,7 +13,7 @@ class OverwatchTournaments extends Component {
                 <Row key={key} >
                     <Col>
                         <h4>
-                            <Link to={{ pathname: '/games/overwatch/tournaments/details/' + JSON.stringify({key}), state: { tournamentName: {key} } }} >
+                            <Link to={{ pathname: '/games/overwatch/tournaments/details/' + JSON.stringify({key}), state: { tournamentName: {key} } }} className="primaryText" >
                                 {key}
                             </Link>
                         </h4>
@@ -26,7 +26,7 @@ class OverwatchTournaments extends Component {
             <Container>
                 <Row>
                     <Col>
-                        <h1>Overwatch Tournaments List</h1>
+                        <h1 className="primaryText" >Overwatch Tournaments List</h1>
                         <br/>
                     </Col>
                 </Row>

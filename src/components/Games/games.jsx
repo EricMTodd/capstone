@@ -10,28 +10,22 @@ class Games extends Component {
                 <Container>
                     <Row>
                         <Col>
-                            <h1>Select a game to see more</h1>
+                            <h1 className="primaryText" >Select a game to see more</h1>
                         </Col>
                     </Row>
                     <Row>
                         <Col>
-                            <Link to="/games/csgo" >
-                                <h4>CS:GO</h4>
-                            </Link>
+                            <h4><Link to="/games/csgo" className="primaryText" >CS:GO</Link></h4>
                         </Col>
                     </Row>
                     <Row>
                         <Col>
-                            <Link to="/games/overwatch" >
-                                <h4>Overwatch</h4>
-                            </Link>
+                            <h4><Link to="/games/overwatch" className="primaryText" >Overwatch</Link></h4>
                         </Col>
                     </Row>
                     <Row>
                         <Col>
-                            <Link to="/games/dota2" >
-                                <h4>DotA 2</h4>
-                            </Link>
+                            <h4><Link to="/games/dota2" className="primaryText" >DotA 2</Link></h4>
                         </Col>
                     </Row>
                 </Container>

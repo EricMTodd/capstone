@@ -9,26 +9,25 @@ class Dota2Details extends Component {
             <Container>
                 <Row>
                     <Col>
-                        <h1>Dota 2</h1>
+                        <h1 className="primaryText" >Dota 2</h1>
                         <br/>
                     </Col>
                 </Row>
                 <Row>
                     <Col>
-                        <h4><Link to="/games/dota2/tournaments" >Tournaments</Link></h4>
+                        <h4><Link to="/games/dota2/tournaments" className="primaryText" >Tournaments</Link></h4>
                     </Col>
                 </Row>
                 <Row>
                     <Col>
-                        <h4><Link to="/games/dota2/teams" >Teams</Link></h4>
+                        <h4><Link to="/games/dota2/teams" className="primaryText" >Teams</Link></h4>
                     </Col>
                 </Row>
                 <Row>
                     <Col>
-                        <h4><Link to="/games/dota2/players" >Players</Link></h4>
+                        <h4><Link to="/games/dota2/players" className="primaryText" >Players</Link></h4>
                     </Col>
                 </Row>
-                
             </Container>
         )
     }

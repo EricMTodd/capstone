@@ -12,13 +12,13 @@ class Dota2TournamentsDetails extends Component {
         } else {
             for (let i = 0; i < matches.length; i++) {
                 if (matches[i].competition_label === tournamentName) {
-                    let team1Url = matches[i].team1_url;
+                    let team1Url = matches[i].team1_url.slice(6);
                     let team1Id = team1Url.replace( /^\D+/g, '');
                     let team1Name;
-                    let team2Url = matches[i].team2_url;
+                    let team2Url = matches[i].team2_url.slice(6);
                     let team2Id = team2Url.replace( /^\D+/g, '');
                     let team2Name;
-                    let victorUrl = matches[i].winning_team_url;
+                    let victorUrl = matches[i].winning_team_url.slice(6);
                     let victorName;
                     for (let k = 0; k < teams.length; k++) {
                         if (teams[k].id === parseInt(team1Id, 10)) {
@@ -39,8 +39,9 @@ class Dota2TournamentsDetails extends Component {
                     dota2MatchesList.push(
                         <Row key={matches[i].id} >
                             <Col>
-                                <h2>{team1Name} vs. {team2Name}</h2>
-                                <h2>Victor: {victorName}</h2>
+                                <h2 className="primaryText" >{team1Name} vs. {team2Name}</h2>
+                                <h2 className="primaryText" >Victor: {victorName}</h2>
+                                <br/>
                                 <br/>
                             </Col>
                         </Row>      
@@ -52,7 +53,7 @@ class Dota2TournamentsDetails extends Component {
             <Container>
                 <Row>
                     <Col>
-                        <h1>{tournamentName}</h1>
+                        <h1 className="primaryText" >{tournamentName}</h1>
                         <br/>
                     </Col>
                 </Row>

@@ -13,20 +13,20 @@ class CsgoTeams extends Component {
                 if (teams[i].country === null) {
                     csgoTeamsList.push(
                             <Col key={teams[i].id} >
-                                <Link to={{ pathname: '/games/csgo/teams/details/' + teams[i].id, state: { teamName: teams[i].full_name, teamId: teams[i].id } }} >
-                                    <h3>{teams[i].full_name}</h3>
+                                <Link to={{ pathname: '/games/csgo/teams/details/' + teams[i].id, state: { teamName: teams[i].full_name, teamId: teams[i].id } }} className="primaryText" >
+                                    <h3 className="primaryText" >{teams[i].full_name}</h3>
                                 </Link>
-                                <h6>Independent</h6>
+                                <h6 className="primaryText" >Independent</h6>
                                 <br/>
                             </Col>
                     );
                 } else {
                     csgoTeamsList.push(
                             <Col key={teams[i].id} >
-                                <Link to={{ pathname: '/games/csgo/teams/details/' + teams[i].id, state: { teamName: teams[i].full_name, teamId: teams[i].id } }} >
-                                    <h3>{teams[i].full_name}</h3>
+                                <Link to={{ pathname: '/games/csgo/teams/details/' + teams[i].id, state: { teamName: teams[i].full_name, teamId: teams[i].id } }} className="primaryText" >
+                                    <h3 className="primaryText" >{teams[i].full_name}</h3>
                                 </Link>
-                                <h6>Representing: {teams[i].country}</h6>
+                                <h6 className="primaryText" >Representing: {teams[i].country}</h6>
                                 <br/>
                             </Col>
                     );
@@ -37,7 +37,7 @@ class CsgoTeams extends Component {
             <Container>
                 <Row>
                     <Col>
-                        <h1>Active CS:GO Teams</h1>
+                        <h1 className="primaryText" >Active CS:GO Teams</h1>
                         <br/>
                     </Col>
                 </Row>

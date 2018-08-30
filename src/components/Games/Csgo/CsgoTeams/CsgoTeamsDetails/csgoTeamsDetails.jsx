@@ -17,20 +17,19 @@ class CsgoTeamsDetials extends Component {
                 if (parseInt(playerTeamId, 10) === teamId) {
                     playersList.push(
                         <Col key={players[i].id} >
-                            <h2>"{players[i].in_game_name}"</h2>
-                            <h6>{players[i].real_life_name}</h6>
+                            <h2 className="primaryText" >"{players[i].in_game_name}"</h2>
+                            <h6 className="primaryText" >{players[i].real_life_name}</h6>
                         </Col>
                     )
                 } else {
                 }
             }
         }
-        console.log("playersList:", playersList);
         return(
             <Container>
                 <Row>
                     <Col>
-                        <h1>{teamName}</h1>
+                        <h1 className="primaryText" >{teamName}</h1>
                         <br/>
                     </Col>
                 </Row>

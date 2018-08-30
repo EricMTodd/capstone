@@ -9,18 +9,18 @@ class OverwatchDetails extends Component {
             <Container>
                 <Row>
                     <Col>
-                        <h1>Overwatch</h1>
+                        <h1 className="primaryText" >Overwatch</h1>
                         <br/>
                     </Col>
                 </Row>
                 <Row>
                     <Col>
-                        <h4><Link to="/games/overwatch/tournaments" >Tournaments</Link></h4>
+                        <h4><Link to="/games/overwatch/tournaments" className="primaryText" >Tournaments</Link></h4>
                     </Col>
                 </Row>
                 <Row>
                     <Col>
-                        <h4><Link to="/games/overwatch/teams" >Teams</Link></h4>
+                        <h4><Link to="/games/overwatch/teams" className="primaryText" >Teams</Link></h4>
                     </Col>
                 </Row>
             </Container>

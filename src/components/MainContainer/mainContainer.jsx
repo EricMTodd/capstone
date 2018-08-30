@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
+import './mainContainer.css';
 import NavBar from '../NavBar/navBar.jsx';
 import LandingPage from '../LandingPage/landingPage.jsx';
 import Games from '../Games/games.jsx';

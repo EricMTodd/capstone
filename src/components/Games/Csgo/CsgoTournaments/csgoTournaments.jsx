@@ -13,7 +13,7 @@ class CsgoTournaments extends Component {
                 <Row key={key} >
                     <Col>
                         <h4>
-                            <Link to={{ pathname: '/games/csgo/tournaments/details/' + JSON.stringify({key}), state: { tournamentName: {key} } }} >
+                            <Link to={{ pathname: '/games/csgo/tournaments/details/' + JSON.stringify({key}), state: { tournamentName: {key} } }} className="primaryText" >
                                 {key}
                             </Link>
                         </h4>
@@ -26,7 +26,7 @@ class CsgoTournaments extends Component {
             <Container>
                 <Row>
                     <Col>
-                        <h1>CS:GO Tournaments List</h1>
+                        <h1 className="primaryText" >CS:GO Tournaments List</h1>
                         <br/>
                     </Col>
                 </Row>

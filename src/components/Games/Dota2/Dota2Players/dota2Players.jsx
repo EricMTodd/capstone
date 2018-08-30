@@ -11,7 +11,7 @@ class Dota2Players extends Component {
             console.log("Loading data...");
         } else {
             for (let i = 0; i < players.length; i++) {
-                let teamUrl = players[i].team_url;
+                let teamUrl = players[i].team_url.slice(6);
                 let teamId = teamUrl.replace( /^\D+/g, '');
                 let teamName;
                 for (let k = 0; k < teams.length; k++) {
@@ -22,9 +22,9 @@ class Dota2Players extends Component {
                 }
                 dota2PlayersList.push(
                     <Col key={players[i].id} >
-                        <h2>"{players[i].in_game_name}"</h2>
-                        <h4>{players[i].real_life_name}</h4>
-                        <h6>Team: {teamName}</h6>
+                        <h2 className="primaryText" >"{players[i].in_game_name}"</h2>
+                        <h4 className="primaryText" >{players[i].real_life_name}</h4>
+                        <h6 className="primaryText" >Team: {teamName}</h6>
                         <br/>
                     </Col>
                 )
@@ -34,7 +34,7 @@ class Dota2Players extends Component {
             <Container>
                 <Row>
                     <Col>
-                        <h1>Active Dota 2 Players</h1>
+                        <h1 className="primaryText" >Active Dota 2 Players</h1>
                         <br/>
                     </Col>
                 </Row>
