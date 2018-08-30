@@ -34,7 +34,6 @@ class CsgoTournamentsDetails extends Component {
                             } else {
                             }
                         } else  {
-
                         }
                     }
                     csgoMatchesList.push(
