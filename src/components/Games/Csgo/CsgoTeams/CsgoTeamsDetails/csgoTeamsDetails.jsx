@@ -25,6 +25,7 @@ class CsgoTeamsDetials extends Component {
                 }
             }
         }
+        console.log("playersList:", playersList);
         return(
             <Container>
                 <Row>

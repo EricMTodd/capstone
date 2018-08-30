@@ -12,7 +12,7 @@ class Dota2TeamsDetials extends Component {
         if (players === undefined || teams === undefined) {
         } else {
             for (let i = 0; i < players.length; i ++) {
-                let playerTeamUrl = players[i].team_url;
+                let playerTeamUrl = players[i].team_url.slice(6);
                 let playerTeamId =  playerTeamUrl.replace( /^\D+/g, '');
                 if (parseInt(playerTeamId, 10) === teamId) {
                     playersList.push(

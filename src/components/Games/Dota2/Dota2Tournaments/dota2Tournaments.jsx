@@ -26,7 +26,7 @@ class Dota2Tournaments extends Component {
             <Container>
                 <Row>
                     <Col>
-                        <h1>CS:GO Tournaments List</h1>
+                        <h1>Dota 2 Tournaments List</h1>
                         <br/>
                     </Col>
                 </Row>

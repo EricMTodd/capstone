@@ -10,7 +10,7 @@ class Games extends Component {
                 <Container>
                     <Row>
                         <Col>
-                            <h1>This is the games container!</h1>
+                            <h1>Select a game to see more</h1>
                         </Col>
                     </Row>
                     <Row>

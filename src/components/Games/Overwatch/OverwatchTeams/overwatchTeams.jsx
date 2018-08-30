@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Container, Row, Col } from 'reactstrap';
-import { Link } from 'react-router-dom';
 
 
 class OverwatchTeams extends Component {
@@ -13,9 +12,7 @@ class OverwatchTeams extends Component {
                 if (teams[i].country === null) {
                     overwatchTeamsList.push(
                             <Col key={teams[i].id} >
-                                <Link to={{ pathname: '/games/overwatch/teams/details/' + teams[i].id, state: { teamName: teams[i].full_name, teamId: teams[i].id } }} >
                                     <h3>{teams[i].full_name}</h3>
-                                </Link>
                                 <h6>Independent</h6>
                                 <br/>
                             </Col>
@@ -23,9 +20,7 @@ class OverwatchTeams extends Component {
                 } else {
                     overwatchTeamsList.push(
                             <Col key={teams[i].id} >
-                                <Link to={{ pathname: '/games/overwatch/teams/details/' + teams[i].id, state: { teamName: teams[i].full_name, teamId: teams[i].id } }} >
                                     <h3>{teams[i].full_name}</h3>
-                                </Link>
                                 <h6>Representing: {teams[i].country}</h6>
                                 <br/>
                             </Col>

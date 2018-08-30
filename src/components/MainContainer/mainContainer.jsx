@@ -141,6 +141,7 @@ class MainContainer extends Component {
             })
         }).catch((err) => {
             console.log(err);
+            console.log("this.state:", this.state);
         });
     }
 

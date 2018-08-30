@@ -9,7 +9,7 @@ class Dota2Details extends Component {
             <Container>
                 <Row>
                     <Col>
-                        <h1>Counter-Strike: Global Offensive</h1>
+                        <h1>Dota 2</h1>
                         <br/>
                     </Col>
                 </Row>

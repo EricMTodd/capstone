@@ -34,7 +34,7 @@ class Dota2Players extends Component {
             <Container>
                 <Row>
                     <Col>
-                        <h1>Active CS:GO Players</h1>
+                        <h1>Active Dota 2 Players</h1>
                         <br/>
                     </Col>
                 </Row>

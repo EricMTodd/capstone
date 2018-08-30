@@ -37,7 +37,7 @@ class Dota2Teams extends Component {
             <Container>
                 <Row>
                     <Col>
-                        <h1>Active CS:GO Teams</h1>
+                        <h1>Active Dota 2 Teams</h1>
                         <br/>
                     </Col>
                 </Row>

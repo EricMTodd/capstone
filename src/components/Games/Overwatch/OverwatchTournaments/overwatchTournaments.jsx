@@ -26,7 +26,7 @@ class OverwatchTournaments extends Component {
             <Container>
                 <Row>
                     <Col>
-                        <h1>CS:GO Tournaments List</h1>
+                        <h1>Overwatch Tournaments List</h1>
                         <br/>
                     </Col>
                 </Row>
