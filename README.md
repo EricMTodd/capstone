@@ -11,7 +11,7 @@ Registered users will be able to follow things from each of the aforementioned c
 # Wireframe, models and other details
 
 ## Wireframe
-![alt text](https://cdn.discordapp.com/attachments/485099116192333835/485099479867981824/JPEG_20180831_085111.jpg "Wireframe for fraktrak");
+![alt text](https://cdn.discordapp.com/attachments/485099116192333835/485099479867981824/JPEG_20180831_085111.jpg "Wireframe for fraktrak")
 
 ## User model for stretch goal
 | id  | email | username | password | games | tournaments | matches | teams | players |
