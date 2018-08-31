@@ -30,7 +30,6 @@ class CsgoDetails extends Component {
                         <h4><Link to="/games/csgo/players" className="primaryText" >Players</Link></h4>
                     </Col>
                 </Row>
-                
             </Container>
         )
     }
