@@ -12,7 +12,7 @@ import CsgoMatches from '../Games/Csgo/CsgoMatches/csgoMatches.jsx';
 import CsgoPlayers from '../Games/Csgo/CsgoPlayers/csgoPlayers.jsx';
 import CsgoTeams from '../Games/Csgo/CsgoTeams/csgoTeams.jsx';
 import CsgoTeamsDetails from '../Games/Csgo/CsgoTeams/CsgoTeamsDetails/csgoTeamsDetails.jsx';
-// Overwatch Imports
+// Overwatch imports
 import Overwatch from '../Games/Overwatch/overwatchDetails.jsx';
 import OverwatchTournaments from '../Games/Overwatch/OverwatchTournaments/overwatchTournaments.jsx';
 import OverwatchTournamentsDetails from '../Games/Overwatch/OverwatchTournaments/OverwatchTournamentsDetails/overwatchTournamentsDetails.jsx';
@@ -20,7 +20,7 @@ import OverwatchMatches from '../Games/Overwatch/OverwatchMatches/overwatchMatch
 import OverwatchPlayers from '../Games/Overwatch/OverwatchPlayers/overwatchPlayers.jsx';
 import OverwatchTeams from '../Games/Overwatch/OverwatchTeams/overwatchTeams.jsx';
 import OverwatchTeamsDetails from '../Games/Overwatch/OverwatchTeams/OverwatchTeamsDetails/overwatchTeamsDetails.jsx';
-// Dota 2
+// Dota 2 imports
 import Dota2 from '../Games/Dota2/dota2Details.jsx';
 import Dota2Tournaments from '../Games/Dota2/Dota2Tournaments/dota2Tournaments.jsx';
 import Dota2TournamentsDetails from '../Games/Dota2/Dota2Tournaments/Dota2TournamentsDetails/dota2TournamentsDetails.jsx';
